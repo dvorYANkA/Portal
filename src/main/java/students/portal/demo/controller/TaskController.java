@@ -3,7 +3,6 @@ package students.portal.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import students.portal.demo.model.Task;
 import students.portal.demo.repository.TaskRepository;
 
 
