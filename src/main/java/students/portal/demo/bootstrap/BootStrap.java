@@ -3,25 +3,21 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import students.portal.demo.model.Form;
 import students.portal.demo.model.Task;
-import students.portal.demo.model.User;
 import students.portal.demo.repository.FormRepository;
 import students.portal.demo.repository.TaskRepository;
-import students.portal.demo.repository.UserRepository;
-
-import java.awt.print.Book;
-import java.util.Set;
+import students.portal.demo.repository.StudentRepository;
 
 @Component
 public class BootStrap implements CommandLineRunner {
 
-    private final UserRepository userRepository;
+    private final StudentRepository studentRepository;
     private final TaskRepository taskRepository;
     private final FormRepository formRepository;
 
-    public BootStrap(UserRepository userRepository,
+    public BootStrap(StudentRepository studentRepository,
                      TaskRepository taskRepository,
                      FormRepository formRepository) {
-        this.userRepository = userRepository;
+        this.studentRepository = studentRepository;
         this.taskRepository = taskRepository;
         this.formRepository = formRepository;
     }

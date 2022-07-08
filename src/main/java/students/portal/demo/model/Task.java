@@ -21,9 +21,9 @@ public class Task {
     private Form taskForm;
 
     @ManyToMany
-    @JoinTable(name = "user_task", joinColumns = @JoinColumn(name = "task_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> listOfUsers = new HashSet<>();
+    @JoinTable(name = "student_task", joinColumns = @JoinColumn(name = "task_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id"))
+    private Set<Student> listOfStudents = new HashSet<>();
 
     public Task(String description, String title, Form taskForm) {
         this.description = description;
@@ -31,11 +31,11 @@ public class Task {
         this.taskForm = taskForm;
     }
 
-    public Task(String description, String title, Form taskForm, Set<User> listOfUsers) {
+    public Task(String description, String title, Form taskForm, Set<Student> listOfStudents) {
         this.description = description;
         this.title = title;
         this.taskForm = taskForm;
-        this.listOfUsers = listOfUsers;
+        this.listOfStudents = listOfStudents;
     }
 
     @Override

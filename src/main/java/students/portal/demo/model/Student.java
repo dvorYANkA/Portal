@@ -1,7 +1,9 @@
 package students.portal.demo.model;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,7 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -18,15 +20,15 @@ public class User {
     private String firstName;
     private String lastName;
 
-    @ManyToMany(mappedBy = "listOfUsers")
+    @ManyToMany(mappedBy = "listOfStudents")
     private Set<Task> listOfTasks = new HashSet<>();
 
-    public User(String firstName, String lastName) {
+    public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public User(String firstName, String lastName, Set<Task> listOfTasks) {
+    public Student(String firstName, String lastName, Set<Task> listOfTasks) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.listOfTasks = listOfTasks;
@@ -34,7 +36,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Student{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
@@ -47,7 +49,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
+        Student user = (Student) o;
 
         return id == user.id;
     }
