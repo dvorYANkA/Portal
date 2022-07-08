@@ -2,6 +2,7 @@ package students.portal.demo.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import students.portal.demo.model.Form;
+import students.portal.demo.model.Student;
 import students.portal.demo.model.Task;
 import students.portal.demo.repository.FormRepository;
 import students.portal.demo.repository.TaskRepository;
@@ -29,7 +30,13 @@ public class BootStrap implements CommandLineRunner {
         Form form = new Form(true);
         formRepository.save(form);
         Task task = new Task("descriptionOfTask", "someTitle", form);
-        taskRepository.save(task);/*
+        taskRepository.save(task);
+        Student student1 = new Student("Vasya", "T");
+        Student student2 = new Student("Kolya", "Y");
+        Student student3 = new Student("Mikol", "V");
+        studentRepository.save(student1);
+        studentRepository.save(student2);
+        studentRepository.save(student3);/*
         User user = new User("firstName","lastName", (Set<Task>) taskRepository);
         userRepository.save(user);
 
