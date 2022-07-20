@@ -1,6 +1,6 @@
 package students.portal.demo.repository;
-import org.springframework.data.repository.CrudRepository;
 import students.portal.demo.model.Form;
+import org.springframework.data.repository.CrudRepository;
 
 public interface FormRepository extends CrudRepository<Form, Long> {
 }

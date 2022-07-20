@@ -12,7 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Student {
+public class Student implements User{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -20,18 +20,22 @@ public class Student {
     private String firstName;
     private String lastName;
 
-    @ManyToMany(mappedBy = "listOfStudents")
-    private Set<Task> listOfTasks = new HashSet<>();
+    @OneToMany
+    @JoinColumn(name = "Student_id")
+    private Set<ConcreteTask> listOfConcreteTasks = new HashSet<>();
+
+    @ManyToOne
+    private Teacher teacher;
 
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Student(String firstName, String lastName, Set<Task> listOfTasks) {
+    public Student(String firstName, String lastName, Set<ConcreteTask> listOfConcreteTasks) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.listOfTasks = listOfTasks;
+        this.listOfConcreteTasks = listOfConcreteTasks;
     }
 
     @Override
@@ -40,7 +44,7 @@ public class Student {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", listOfTasks=" + listOfTasks +
+                ", listOfTasks=" + listOfConcreteTasks +
                 '}';
     }
 

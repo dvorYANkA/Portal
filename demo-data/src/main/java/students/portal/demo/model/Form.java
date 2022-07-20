@@ -17,7 +17,7 @@ public class Form {
 
     @OneToMany
     @JoinColumn(name = "Form_id")
-    private Set<Task> listOfTasks = new HashSet<>();
+    private Set<TaskGeneral> listOfTaskGenerals = new HashSet<>();
 
     private boolean algOrGeom;
 
@@ -25,8 +25,8 @@ public class Form {
         this.algOrGeom = algOrGeom;
     }
 
-    public Form(Set<Task> listOfTasks, boolean algOrGeom) {
-        this.listOfTasks = listOfTasks;
+    public Form(Set<TaskGeneral> listOfTaskGenerals, boolean algOrGeom) {
+        this.listOfTaskGenerals = listOfTaskGenerals;
         this.algOrGeom = algOrGeom;
     }
 
@@ -34,7 +34,7 @@ public class Form {
     public String toString() {
         return "Form{" +
                 "id=" + id +
-                ", listOfTasks=" + listOfTasks +
+                ", listOfTaskGenerals=" + listOfTaskGenerals +
                 ", algOrGeom=" + algOrGeom +
                 '}';
     }

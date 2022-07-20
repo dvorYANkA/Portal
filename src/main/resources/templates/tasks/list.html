@@ -8,14 +8,14 @@
     <h1>Tasks observe</h1>
     <table>
         <tr>
-            <th>ID of task</th>
+            <th>ID of taskGeneral</th>
             <th>Title</th>
             <th>Description</th>
         </tr>
-        <tr th:each="task : ${tasks}" >
-            <td th:text="${task.id}"></td>
-            <td th:text="${task.title}"></td>
-            <td th:text="${task.description}"></td>
+        <tr th:each="taskGeneral : ${tasks}" >
+            <td th:text="${taskGeneral.id}"></td>
+            <td th:text="${taskGeneral.title}"></td>
+            <td th:text="${taskGeneral.description}"></td>
         </tr>
     </table>
 </body>
