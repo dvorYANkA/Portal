@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>demo-data</artifactId>
-    <packaging>war</packaging>
 
     <name>demo-data Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
