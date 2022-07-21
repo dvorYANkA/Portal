@@ -12,11 +12,8 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Student implements User{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
+public class Student extends User
+{
     private String firstName;
     private String lastName;
 
