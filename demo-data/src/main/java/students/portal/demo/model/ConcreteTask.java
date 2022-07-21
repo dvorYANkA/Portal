@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ConcreteTask extends TaskGeneral
+public class ConcreteTask extends GeneralTask
 {
     @ManyToOne
     private Student studentOwner;

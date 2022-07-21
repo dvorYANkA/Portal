@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class TaskGeneral {
+public class GeneralTask {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -19,7 +19,7 @@ public class TaskGeneral {
     @ManyToOne
     private Form taskForm;
 
-    public TaskGeneral(String description, String title, Form taskForm) {
+    public GeneralTask(String description, String title, Form taskForm) {
         this.description = description;
         this.title = title;
         this.taskForm = taskForm;
@@ -27,7 +27,7 @@ public class TaskGeneral {
 
     @Override
     public String toString() {
-        return "TaskGeneral{" +
+        return "GeneralTask{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
                 '}';
@@ -38,9 +38,9 @@ public class TaskGeneral {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TaskGeneral taskGeneral = (TaskGeneral) o;
+        GeneralTask generalTask = (GeneralTask) o;
 
-        return id == taskGeneral.id;
+        return id == generalTask.id;
     }
 
     @Override

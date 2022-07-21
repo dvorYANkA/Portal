@@ -2,6 +2,8 @@ package students.portal.demo.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import students.portal.demo.services.GeneralTaskService;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +19,7 @@ public class Form {
 
     @OneToMany
     @JoinColumn(name = "Form_id")
-    private Set<TaskGeneral> listOfTaskGenerals = new HashSet<>();
+    private Set<GeneralTask> listOfGeneralTasks = new HashSet<>();
 
     private boolean algOrGeom;
 
@@ -25,8 +27,8 @@ public class Form {
         this.algOrGeom = algOrGeom;
     }
 
-    public Form(Set<TaskGeneral> listOfTaskGenerals, boolean algOrGeom) {
-        this.listOfTaskGenerals = listOfTaskGenerals;
+    public Form(Set<GeneralTask> listOfGeneralTasks, boolean algOrGeom) {
+        this.listOfGeneralTasks = listOfGeneralTasks;
         this.algOrGeom = algOrGeom;
     }
 
@@ -34,7 +36,7 @@ public class Form {
     public String toString() {
         return "Form{" +
                 "id=" + id +
-                ", listOfTaskGenerals=" + listOfTaskGenerals +
+                ", listOfTaskGenerals=" + listOfGeneralTasks +
                 ", algOrGeom=" + algOrGeom +
                 '}';
     }
