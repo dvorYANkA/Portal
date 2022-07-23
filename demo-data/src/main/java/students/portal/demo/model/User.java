@@ -6,10 +6,6 @@ import javax.persistence.Id;
 
 public class User extends BaseEntity
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    protected long id;
-
     String firstName = "";
     String lastName = "";
 }
