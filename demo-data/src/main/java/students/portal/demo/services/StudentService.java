@@ -2,10 +2,7 @@ package students.portal.demo.services;
 import students.portal.demo.model.Student;
 import java.util.Set;
 
-public interface StudentService
+public interface StudentService extends CrudService<Student, Long>
 {
     Student findByLastName(String lastName);
-    Student findById(Long id);
-    Student save(Student student);
-    Set<Student> findAll();
 }

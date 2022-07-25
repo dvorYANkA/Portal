@@ -6,8 +6,5 @@ import students.portal.demo.model.Teacher;
 
 import java.util.Set;
 
-public interface ConcreteTaskService {
-    ConcreteTask findById(Long id);
-    ConcreteTask save(ConcreteTask concreteTask);
-    Set<ConcreteTask> findAll();
+public interface ConcreteTaskService extends CrudService<ConcreteTask, Long> {
 }

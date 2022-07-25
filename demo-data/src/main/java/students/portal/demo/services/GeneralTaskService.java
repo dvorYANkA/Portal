@@ -3,9 +3,6 @@ import students.portal.demo.model.GeneralTask;
 import students.portal.demo.model.Teacher;
 import java.util.Set;
 
-public interface GeneralTaskService
+public interface GeneralTaskService extends CrudService<GeneralTask, Long>
 {
-    GeneralTask findById(Long id);
-    GeneralTask save(GeneralTask generalTask);
-    Set<GeneralTask> findAll();
 }
