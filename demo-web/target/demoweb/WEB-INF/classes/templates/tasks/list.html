@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Math class</title>
+</head>
+<body>
+    <h1>Tasks observe</h1>
+    <table>
+        <tr>
+            <th>ID of taskGeneral</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+        <tr th:each="taskGeneral : ${tasks}" >
+            <td th:text="${taskGeneral.id}"></td>
+            <td th:text="${taskGeneral.title}"></td>
+            <td th:text="${taskGeneral.description}"></td>
+        </tr>
+    </table>
+</body>
+</html>
