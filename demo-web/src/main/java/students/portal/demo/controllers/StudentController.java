@@ -1,4 +1,4 @@
-package students.portal.demo.controller;
+package students.portal.demo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +16,6 @@ public class StudentController {
     @RequestMapping("/students")
     public  String getStudents(Model model){
         model.addAttribute("students", studentRepository.findAll());
-        return "/students/list";
+        return "/students/index";
     }
 }

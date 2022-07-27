@@ -1,4 +1,4 @@
-package students.portal.demo.controller;
+package students.portal.demo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
